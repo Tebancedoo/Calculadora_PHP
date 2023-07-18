@@ -1,6 +1,6 @@
 <?php
 
-//Esta es la apa de negocio 
+//Esta es la capa de negocio 
 
 class operaccion  // defino la clase
 {
