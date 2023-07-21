@@ -4,4 +4,4 @@
 
 
 
-<!--id_usuario todo en minuscula ñdejar un espacio mas grande al necesario, los documentos como varchar, siempre spanis utf8 ci-->
+<!--id_usuario todo en minuscula dejar un espacio mas grande al necesario, los documentos como varchar, siempre spanis utf8 ci-->
