@@ -9,9 +9,9 @@ class usuario //clase
 
         $cont = "0";
 
-        $sql = "SELECT * FROM usuario WHERE nombre='$nombre', apellido='$apellido', documento='$documento',genero='$genero'";
+        $sql = "SELECT * FROM usuarios WHERE documento='$documento'";
 
-        if(!$result = $db->query($sql))
+        if (!$result = $db->query($sql))
         {
             die('Hay un error corriendo en la consulta o los datos no se encontraron!!! [' . $db->error . ']');
         }
