@@ -1,6 +1,7 @@
 # Ejercicios en PHP
 
-#### En este repositorio se encontrarán varios ejercicios elaborada con PHP, utilizando arquitetura por capas y POO.
+#### En este repositorio se encontrarán varios ejercicios elaborada con PHP, utilizando arquitetura por capas y POO. Con las indicaciones
+
 
 
 <!--Los nombres de las tablas van en plural y la de los campos van en singular como buena practica-->
