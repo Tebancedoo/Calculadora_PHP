@@ -27,7 +27,7 @@ class usuario //clase
 
         if ($cont == "0")
         {
-            mysqli_query($db,"INSERT INTO usuario (nombre,apellido,documento,genero) VALUES ('$nombre', '$apellido','$documento','$genero')") or die(mysqli_error($db));
+            mysqli_query($db,"INSERT INTO usuarios (nombre,apellido,documento,genero) VALUES ('$nombre', '$apellido','$documento','$genero')") or die(mysqli_error($db));
             echo "Usted ha sigo registrado correctamente";
         }else
         {
