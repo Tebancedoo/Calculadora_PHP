@@ -4,14 +4,7 @@ include ('pres_banner.php');
 
 echo "<br/>";
 
-
-
-
-
-
-
-
-
+include ('pres_form.php');
 
 echo "<br/>";
 
