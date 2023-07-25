@@ -60,7 +60,7 @@ h1{
 
 <?php
 
-    echo "<form class='register' action='neg_registrar.php'>";
+    echo "<form class='register' action='neg_registrar.php' method='post'>";
 
     echo "<h1>Registro </h1>";
 
@@ -72,7 +72,7 @@ h1{
     echo "<br/>";
     echo "Documento: <input type='number' placeholder='Ingrese su documento'  name='documento' class='element'>";
     echo "<br/>";
-    echo "Fecha nacimiento: <input type='number' placeholder='Ingrese fecha nacimiento' name='nacimiento' class='element'>";
+    echo "Fecha nacimiento: <input type='date' placeholder='Ingrese fecha nacimiento' name='nacimiento' class='element'>";
     echo "<input type='submit' value='Enviar' class='btn'>";
 
     echo "</div>";
