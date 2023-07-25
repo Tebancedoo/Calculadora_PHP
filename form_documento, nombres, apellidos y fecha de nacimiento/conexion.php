@@ -2,7 +2,7 @@
 //banner cuerpo footer, base de datos normalizada
 
 header("Content-Type: text/html;charset-utf-8");
-$db = new mysqli('locahost', 'root', '', 'pruebas1');
+$db = new mysqli('localhost', 'root', '', 'pruebas1');
 $acenos = $db-> query("SET NAMES 'utf8'");
 
 if($db->connect_error > 0)

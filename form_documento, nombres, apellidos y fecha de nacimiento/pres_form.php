@@ -24,7 +24,6 @@ h1{
     padding: 20px;
     flex-direction: column;
     width: 30%;
-    opacity: 0.5;
     border-radius: 20px;
     box-shadow: 10px 5px 5px black;
     margin-top: 8%;
@@ -36,9 +35,9 @@ h1{
     border: none;
     background-color: #D3CDCC;
     cursor: auto;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 10px;
-    color: #fff;
+    color: #000;
     margin: 5 10;
 }
 
@@ -66,13 +65,13 @@ h1{
 
     echo "<div class='div-register'>";
     
-    echo "Nombres: <input type='text' placeholder='Ingrese sus nombres' name='nombres' class='element' >";
+    echo "Nombres: <input type='text' placeholder='Ingrese sus nombres' name='nombres' class='element'required >";
     echo "<br/>";
-    echo "Apelllidos: <input type='text' placeholder='Ingrese sus apellidos'  name='apellidos' class='element'>";
+    echo "Apelllidos: <input type='text' placeholder='Ingrese sus apellidos'  name='apellidos' class='element' required >";
     echo "<br/>";
-    echo "Documento: <input type='number' placeholder='Ingrese su documento'  name='documento' class='element'>";
+    echo "Documento: <input type='number' placeholder='Ingrese su documento'  name='documento' class='element' required >";
     echo "<br/>";
-    echo "Fecha nacimiento: <input type='date' placeholder='Ingrese fecha nacimiento' name='nacimiento' class='element'>";
+    echo "Fecha nacimiento: <input type='date' name='nacimiento' class='element' required >";
     echo "<input type='submit' value='Enviar' class='btn'>";
 
     echo "</div>";
