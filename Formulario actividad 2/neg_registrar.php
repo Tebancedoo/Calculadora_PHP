@@ -1,9 +1,9 @@
 <style>
 
 p{
-   /*font-size: 28px;
+   font-size: 28px;
     text-align: center;
-    align: center;*/
+    align: center;
 }
 
 </style>
@@ -40,10 +40,10 @@ p{
             {
 
                 mysqli_query($db, "INSERT INTO usuarios (nombre,apellido,documento) VALUES ('$nombre','$apellido','$documento')") or die(mysqli_error($db));
-                echo "<center> <p> Usted ha sido registrado correctamente </p> </center> ";
+                echo "<p> Usted ha sido registrado correctamente </p>  ";
             }else
             {
-                echo "<center> <p> No se puede registrar en base de datos </p> </center>";
+                echo "<p> No se puede registrar en base de datos </p>";
 
             }//fin del metodo
         }//fin del ojeto
