@@ -1,18 +1,24 @@
 <style>
 
-div{
+.content{
 
 display: flex;
 justify-content: center;
 align-items: center;
-height: 600px;
+height: 900px;
+
+
 
 }
 
 form{
 
-box-shadow: -3px -3px 9px #706B6A,
-3px 3px 7px rgba(147, 149, 151, 0.671);
+box-shadow: -4px -4px 10px #706B6A, 4px 4px 8px rgba(147, 149, 151, 0.671);
+background: none;
+flex-direction: column;
+background: #000000;
+
+
 
 }
 
@@ -21,19 +27,40 @@ input{
 font-size: 25px;
 margin: 15px;
 border: none;
+background: none;
+outline: none;
+border-radius: 5px;
+color: #fff;
+width: 100%;
 
 }
 
 .btn{
 
+    width: 90%;
+    height: 45px;
+    border-radius: 55px;
+    background: rgba(255, 255, 255, 0.137);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
 
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 8px #ffffffa4;
 }
 
 </style>
 
 <?php
 
-echo '<div>';
+echo '<div class="content">';
 
 echo '<form>';
 

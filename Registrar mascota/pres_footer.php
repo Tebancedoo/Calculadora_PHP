@@ -38,7 +38,7 @@ p{
 
 <?php
 
-echo '<footer><div class="row primary"><div class="column about"><h3>Registrar mascota</h3><p>Registre su mascota </p></div></div> </footer>';
+echo '<footer clas="footer" ><div class="row primary"><div class="column about"><h3>Registrar mascota</h3><p>Registre su mascota </p></div></div> </footer>';
 
 
 ?>
