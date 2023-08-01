@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-08-2023 a las 19:09:57
+-- Tiempo de generación: 01-08-2023 a las 21:37:35
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.2
 
@@ -37,6 +37,13 @@ CREATE TABLE `mascotas` (
   `tipo_mascota` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `documento_mascota` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `mascotas`
+--
+
+INSERT INTO `mascotas` (`nombres_dueño`, `apellidos_dueño`, `documento_dueño`, `numero_celular`, `nombre_mascota`, `tipo_mascota`, `documento_mascota`) VALUES
+('Draco', 'Perez Gomez', '000', '456123', 'Triton', '1', '555');
 
 -- --------------------------------------------------------
 

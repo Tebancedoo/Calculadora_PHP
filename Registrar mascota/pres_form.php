@@ -71,7 +71,7 @@ include ('conexion.php');
 
 echo '<div class="content">';
 
-echo '<form method="post" action="">';
+echo '<form method="post" action="neg_registrar.php">';
 
 echo '<p> Registrar mascota </p>';
 
@@ -106,7 +106,7 @@ while ($row = $result->fetch_assoc())
 
 echo '</select>'; echo"<br>";
 
-echo '<input type="number" placeholder="Ingrese el documento " required name="documento_mascota" >'; echo"<br>";
+echo '<input type="number" placeholder="Ingrese documento mascota " required name="documento_mascota" >'; echo"<br>";
 
 echo '<input type="submit" class="btn" value="Enviar">';
 
