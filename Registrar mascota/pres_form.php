@@ -22,7 +22,7 @@ background: #000000;
 
 }
 
-input{
+input,select{
 
 font-size: 25px;
 margin: 15px;
@@ -30,8 +30,8 @@ border: none;
 background: none;
 outline: none;
 border-radius: 5px;
-color: #fff;
 width: 100%;
+color: gray;
 
 }
 
@@ -56,28 +56,57 @@ width: 100%;
     box-shadow: 0px 0px 8px #ffffffa4;
 }
 
+p{
+
+    font-size: 25px;
+    color: #fff;
+    width: 77%;
+}
+
 </style>
 
 <?php
 
+include ('conexion.php');
+
 echo '<div class="content">';
 
-echo '<form>';
+echo '<form method="post" action="">';
 
+echo '<p> Registrar mascota </p>';
 
-echo '<input placeholder="Ingrese sus nombres" required name="nombres_dueño" >'; echo"<br>";
+echo '<input type="text" placeholder="Ingrese sus nombres" required name="nombres_dueño" >'; echo"<br>";
 
-echo '<input placeholder="Ingrese sus apellidos" required name="apellidos_dueño" >'; echo"<br>";
+echo '<input type="text" placeholder="Ingrese sus apellidos" required name="apellidos_dueño" >'; echo"<br>";
 
-echo '<input placeholder="Ingrese su documento" required name="documento_dueño" >'; echo"<br>";
+echo '<input type="number" placeholder="Ingrese su documento" required name="documento_dueño" >'; echo"<br>";
 
-echo '<input placeholder="Ingrese su celular" required name="numero_celular" >'; echo"<br>";
+echo '<input type="number" placeholder="Ingrese su celular" required name="numero_celular" >'; echo"<br>";
 
-echo '<input placeholder="Ingrese nombre mascota" required name="nombre_mascota" >'; echo"<br>";
+echo '<input type="text" placeholder="Ingrese nombre mascota" required name="nombre_mascota" >'; echo"<br>";
 
-echo '<input placeholder="Ingrese el tipo mascota" required name="tipo_mascota" >'; echo"<br>";
+echo '<select name="tipo_mascota" required>';
 
-echo '<input placeholder="Ingrese el documento " required name="documento_mascota" >'; echo"<br>";
+echo '<option value="">Ingrese su tipo mascota</option>'; 
+
+//inicia la consulta 
+
+$sql = "SELECT * FROM tipo_mascotas";
+if (!$result = $db->query($sql))
+{
+    die ('Hay un error en la consulta o los datos no se han podido encontrar [' . $db->error .  ']');
+}
+
+while ($row = $result->fetch_assoc())
+{
+    $iid_mascota=stripslashes($row["id_mascota"]);
+    $mmascota=stripslashes($row["mascota"]); 
+    echo "<option value='$iid_mascota'>$mmascota</option>";//los datos que encuentre me los imprime en un option
+}//fin de la consulta
+
+echo '</select>'; echo"<br>";
+
+echo '<input type="number" placeholder="Ingrese el documento " required name="documento_mascota" >'; echo"<br>";
 
 echo '<input type="submit" class="btn" value="Enviar">';
 
