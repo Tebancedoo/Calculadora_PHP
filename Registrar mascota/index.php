@@ -22,4 +22,9 @@ para los roles usar un tipo selected,
 
     En la tabla usuarios se van a almacenar los datos que se ingresen 
     y va a haber otra tabla para los tios de mascotas
+
+
+   Crear dos formulaios uno para las mascotas y otro para los usuarios,
+   y asociar las masotas a sus dueños por el "documento_dueño"
+   registrar las mascotas en la base de datos, desde una vista de administrador
 -->
