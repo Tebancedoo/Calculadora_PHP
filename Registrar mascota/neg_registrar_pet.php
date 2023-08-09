@@ -22,7 +22,7 @@ class mascota
 $final = new mascota();
 $final->registrar($_POST["documento_dueño"],$_POST["nombre_mascota"],$_POST["tipo_mascota"],$_POST["documento_mascota"]);
 
-echo "<a href='index.php'> Regresar </a>";
+echo "<br>"; echo "<a href='index.php'> Regresar </a>";
 
 include ('pres_footer.php');
 

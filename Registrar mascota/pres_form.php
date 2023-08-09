@@ -71,7 +71,7 @@ include ('conexion.php');
 
 echo '<div class="content">';
 
-echo '<form method="post" action="neg_registrar.php">';
+echo '<form method="post" action="">';
 
 echo '<p> Registrar mascota </p>';
 

@@ -22,7 +22,7 @@ class usuario
 $final = new usuario();
 $final->registrar($_POST["nombres_dueño"],$_POST["apellidos_dueño"],$_POST["documento_dueño"],$_POST["numero_celular"]);
 
-echo "<a href='pres_form_pet.php'>Click para continuar </a>";
+echo "<br>"; echo "<a href='pres_form_pet.php'>Click para continuar </a>";
 
 include ('pres_footer.php');
 
