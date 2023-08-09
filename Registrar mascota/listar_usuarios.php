@@ -127,6 +127,8 @@ while ($row3 = $result3->fetch_assoc())
 
 //Tabla donde aparezca una mascota y el dueño de la mascota
 
+//hacer esto con POO
+
 
 
 ?>
