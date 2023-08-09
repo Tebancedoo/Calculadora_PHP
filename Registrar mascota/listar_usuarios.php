@@ -15,7 +15,7 @@ while ($row = $result->fetch_assoc())
     $nnombre_mascota=stripslashes($row["nombre_mascota"]); //Traigo el nombre de la mascota
     $ddocumento_dueño=stripslashes($row["documento_dueño"]); // Traigo el documento del dueño de la mascota
 
-/////////////////////////////////////////// Inicia la sub consulta
+/////////////////////////////////////////// Inicia la subconsulta
 
 $sql2 = "SELECT * FROM usuarios WHERE documento_dueño='$ddocumento_dueño'";//Uso el documento del dueño para buscar el dueño
 if (!$result2 = $db->query($sql2))
@@ -96,10 +96,12 @@ if (!$result3 = $db->query($sql3))
 
     echo "<thead>";
     echo "<tr>";
+
     echo "<th> Documento dueño </th>";
     echo "<th> Nombre mascota </th>";
     echo "<th> Tipo mascota </th>";
     echo "<th> Documento mascota </th>";
+
     echo "</tr>";
     echo "<thead>";
 
@@ -112,10 +114,9 @@ while ($row3 = $result3->fetch_assoc())
     $ttipo_mascota=stripslashes($row3["tipo_mascota"]);
     $ddocumento_mascota=stripslashes($row3["documento_mascota"]);
     
-    echo "<tr><td> $ddocumento_dueño </td> <td> $nnombre_mascota </td> <td> $ttipo_mascota </td> <td> $ddocumento_mascota </td> </tr>";
+    echo "<tr><td> $ddocumento_dueño </td> <td> $nnombre_mascota </td> <td> $ttipo_mascota </td> <td> $ddocumento_mascota </td></tr>";
 
 }
-
 
     echo "</tbody>";
 
@@ -126,6 +127,6 @@ while ($row3 = $result3->fetch_assoc())
 
 //Tabla donde aparezca una mascota y el dueño de la mascota
 
-// LInk ayuda con ls tablas https://francescricart.com/tablas-html/
+
 
 ?>
