@@ -70,7 +70,7 @@ while ($row3 = $result3->fetch_assoc())
     
 
     //echo $nnombres_dueño, " ", $aapellidos_dueño; echo "<br>";
-    echo "<tr><td> $nnombres_dueño</td> <td> $aapellidos_dueño</td> <td> $ddocumento_dueño</td> <td> $nnumero_celular</td> </tr>";
+    echo "<tr><td> $nnombres_dueño </td> <td> $aapellidos_dueño </td> <td> $ddocumento_dueño </td> <td> $nnumero_celular </td> </tr>";
 
 }
 
