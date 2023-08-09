@@ -126,6 +126,6 @@ while ($row3 = $result3->fetch_assoc())
 
 //Tabla donde aparezca una mascota y el dueño de la mascota
 
-
+// LInk ayuda con ls tablas https://francescricart.com/tablas-html/
 
 ?>
