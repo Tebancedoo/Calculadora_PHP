@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-08-2023 a las 15:16:23
+-- Tiempo de generación: 14-08-2023 a las 18:10:47
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -91,6 +91,26 @@ INSERT INTO `usuarios` (`nombres_dueño`, `apellidos_dueño`, `documento_dueño`
 ('Mateo', 'Perez', '222', '9632585200'),
 ('Juan Carlos', 'Suarez', '333', '88855259822'),
 ('Pedro', 'Gonzales', '444', '8744563002');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios_mascotas`
+--
+
+CREATE TABLE `usuarios_mascotas` (
+  `documento_dueño` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `documento_mascota` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios_mascotas`
+--
+
+INSERT INTO `usuarios_mascotas` (`documento_dueño`, `documento_mascota`) VALUES
+('000', '555'),
+('111', '333221'),
+('222', '789987');
 
 --
 -- Índices para tablas volcadas

@@ -207,6 +207,7 @@ class user
         echo "<th> Apellidos dueño </th>";
         echo "<th> Nombre mascota </th>";
         echo "<th> Documento dueño </th>";
+        echo "<th> Eliminar registro </th>";
 
         echo "</tr>";
         echo "<thead>";
@@ -232,7 +233,19 @@ class user
                 $nnombres_dueño=stripslashes($row2["nombres_dueño"]);
                 $aapellidos_dueño=stripslashes($row2["apellidos_dueño"]);
                 
-                echo "<tr><td> $nnombres_dueño </td> <td> $aapellidos_dueño </td> <td> $nnombre_mascota </td> <td> $ddocumento_dueño </td></tr>";
+                echo "<tr>
+
+                    <td> $nnombres_dueño </td> 
+                    <td> $aapellidos_dueño </td> 
+                    <td> $nnombre_mascota </td> 
+                    <td> $ddocumento_dueño </td>
+
+                    <td> <form> <input type='text'> 
+                    <input type='text'> 
+                    <input type='submit' value='Eliminar'> </form>
+                    </td>
+
+                    </tr>";
 
             }//fin de la subconsulta
 
@@ -241,12 +254,12 @@ class user
 
         }//fin de la consulta principal
 
-        //hacer un boton para eliminar los registros, crear una capa para eliminar los registros
+        //hacer un boton para eliminar los registros, crear una capa para eliminar los registros, separar la consulta (crar una nueva consulta para hacer el eliminar y no en el ultimo ya existente)
 
         echo "</tbody>";
 
         echo '</table>';
-        
+
     }
 
 }
