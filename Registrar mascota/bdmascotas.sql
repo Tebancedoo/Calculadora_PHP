@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-08-2023 a las 18:10:47
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.1.12
+-- Tiempo de generación: 14-08-2023 a las 23:32:19
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -32,7 +33,7 @@ CREATE TABLE `mascotas` (
   `nombre_mascota` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `tipo_mascota` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `documento_mascota` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `mascotas`
@@ -54,7 +55,7 @@ INSERT INTO `mascotas` (`documento_dueño`, `nombre_mascota`, `tipo_mascota`, `d
 CREATE TABLE `tipo_mascotas` (
   `id_mascota` int(30) NOT NULL,
   `mascota` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tipo_mascotas`
@@ -79,7 +80,7 @@ CREATE TABLE `usuarios` (
   `apellidos_dueño` text CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL,
   `documento_dueño` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `numero_celular` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -99,18 +100,20 @@ INSERT INTO `usuarios` (`nombres_dueño`, `apellidos_dueño`, `documento_dueño`
 --
 
 CREATE TABLE `usuarios_mascotas` (
+  `id` int(10) NOT NULL,
   `documento_dueño` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `documento_mascota` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios_mascotas`
 --
 
-INSERT INTO `usuarios_mascotas` (`documento_dueño`, `documento_mascota`) VALUES
-('000', '555'),
-('111', '333221'),
-('222', '789987');
+INSERT INTO `usuarios_mascotas` (`id`, `documento_dueño`, `documento_mascota`) VALUES
+(1, '000', '555'),
+(2, '111', '333221'),
+(3, '222', '789987'),
+(4, '333', '999');
 
 --
 -- Índices para tablas volcadas
@@ -123,6 +126,12 @@ ALTER TABLE `tipo_mascotas`
   ADD PRIMARY KEY (`id_mascota`);
 
 --
+-- Indices de la tabla `usuarios_mascotas`
+--
+ALTER TABLE `usuarios_mascotas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -131,6 +140,12 @@ ALTER TABLE `tipo_mascotas`
 --
 ALTER TABLE `tipo_mascotas`
   MODIFY `id_mascota` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios_mascotas`
+--
+ALTER TABLE `usuarios_mascotas`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

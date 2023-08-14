@@ -1,21 +1,41 @@
 <?php
 
+class usuario
 
-class usuario 
-{ 
-    //Listar usuarios con la mascota
+{
 
-    public function listar_usuarios()//los parametros solo se usan cuando quiero delimitar 
+    public function listar_en_tabla()
 
-    { 
+    {
+
         include ('conexion.php');
 
 
-        $sql = "SELECT * FROM mascotas"; //Inicia la primera consulta
+        $sql = "SELECT * FROM mascotas"; //Primera consulta a la tabla mascotas
         if (!$result = $db->query($sql))
         {
             die ('Hay un error en la consulta o los datos no se han podido encontrar [' . $db->error .  ']');
         }
+
+        //imprimo una tabla
+
+        echo "<br>";
+
+        echo '<table border="5px" cellpadding="10rem">';
+
+        echo "<thead>";
+        echo "<tr>";
+
+        echo "<th> Nombres dueño </th>";
+        echo "<th> Apellidos dueño </th>";
+        echo "<th> Nombre mascota </th>";
+        echo "<th> Documento dueño </th>";
+
+        echo "</tr>";
+        echo "<thead>";
+
+        echo "<tbody>";
+
 
         while ($row = $result->fetch_assoc())
         {
@@ -35,23 +55,24 @@ class usuario
                 $nnombres_dueño=stripslashes($row2["nombres_dueño"]);
                 $aapellidos_dueño=stripslashes($row2["apellidos_dueño"]);
                 
-                echo  $nnombre_mascota; echo "---"; echo $nnombres_dueño, " ", $aapellidos_dueño; echo "<br>";
+                echo "<tr> <td> $nnombres_dueño </td> <td> $aapellidos_dueño </td> <td> $nnombre_mascota </td> <td> $ddocumento_dueño </td>";
 
             }//fin de la subconsulta
+
 
             ///////////////////////////////////// Fin de la sub consulta
 
         }//fin de la consulta principal
 
+        echo "</tbody>";
+
+        echo '</table>';
+
     }
+
 }
 
-// llamo la clase y el objeto
-
 $final = new usuario();
-$final->listar_usuarios();
-
+$final->listar_en_tabla();
 
 ?>
-
-<!--crear la tabla intermedia, cuando hayan relaciones (N,N) mucho a muchos-->
