@@ -31,6 +31,7 @@ class usuario
         echo "<th> Documento dueño </th>";
         echo "<th> Nombre mascota </th>";
         echo "<th> Documento mascota </th>";
+        echo "<th> Tipo mascota </th>";
         echo "<th> Eliminar registro </th>";
 
         echo "</tr>";
@@ -65,24 +66,40 @@ class usuario
                         while ($row3 = $result3->fetch_assoc())
                         {
                             $nnombre_mascota=stripslashes($row3["nombre_mascota"]); // Traigo los nombres de la mascota 
+                            $ttipo_mascota=stripslashes($row3["tipo_mascota"]); // Traigo los tipos de mascotas
 
-                            echo "<tr>
 
-                                <td> $nnombres_dueño </td>
-                                <td> $aapellidos_dueño </td>
-                                <td> $ddocumento_dueño </td> 
-                                <td> $nnombre_mascota </td>
-                                <td> $ddocumento_mascota </td>
+                            $sql4 = "SELECT * FROM tipo_mascotas WHERE id_mascota ='$ttipo_mascota'"; //Cuarta consulta a la tabla mascotas
+                            if (!$result4 = $db->query($sql4))
+                            {
+                                die ('Hay un error en la consulta o los datos no se han podido encontrar [' . $db->error .  ']');
+                            }
+
+                            while ($row4 = $result4->fetch_assoc())
+                            {
+                                $mmascota=stripslashes($row4["mascota"]); // Traigo el tipo de mascota 
                                 
 
-                                <td> <form method='post' action='neg_eliminar_registro.php'> 
-                                <input type='text' value='$ddocumento_dueño' hidden name='documento_dueño'> 
-                                <input type='text' value='$ddocumento_mascota' hidden name='documento_mascota'> 
-                                <input type='submit' value='Eliminar'>
-                                </form>
-                                </td>
+                                    echo "<tr>
 
-                            </tr>";
+                                        <td> $nnombres_dueño </td>
+                                        <td> $aapellidos_dueño </td>
+                                        <td> $ddocumento_dueño </td> 
+                                        <td> $nnombre_mascota </td>
+                                        <td> $ddocumento_mascota </td>
+                                        <td> $mmascota </td>
+                                        
+
+                                        <td> <form method='post' action='neg_eliminar_registro.php'> 
+                                        <input type='text' value='$ddocumento_dueño' hidden name='documento_dueño'> 
+                                        <input type='text' value='$ddocumento_mascota' hidden name='documento_mascota'> 
+                                        <input type='submit' value='Eliminar'>
+                                        </form>
+                                        </td>
+
+                                    </tr>";
+                                    
+                            }
                         }
                 }
         }//fin de la consulta 
