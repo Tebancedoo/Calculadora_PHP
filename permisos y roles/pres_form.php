@@ -19,5 +19,7 @@ echo '<input value="Enviar" type="submit">'; echo '<br>';
 
 echo '</form>';
 
+//en la capa de registrar insertar los datos en la tabla usuarios 
+//y hacer otro insert con el documento y le rol por default(usuario)
 
 ?>
