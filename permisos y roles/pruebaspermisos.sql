@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-08-2023 a las 17:20:41
+-- Tiempo de generación: 23-08-2023 a las 15:46:50
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -33,6 +33,13 @@ CREATE TABLE `permisos` (
   `rol` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `permisos`
+--
+
+INSERT INTO `permisos` (`id_permiso`, `documento`, `rol`) VALUES
+(0, '1175868685693', '2');
+
 -- --------------------------------------------------------
 
 --
@@ -50,9 +57,9 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id_rol`, `rol`) VALUES
 (1, 'admin'),
-(4, 'supervisor'),
 (2, 'usuario'),
-(3, 'vendedor');
+(3, 'vendedor'),
+(4, 'supervisor');
 
 -- --------------------------------------------------------
 
@@ -68,6 +75,13 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `documento`, `nombre`, `apellido`) VALUES
+(0, '1175868685693', 'Whosemm', 'cuvillaxtx');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -75,20 +89,29 @@ CREATE TABLE `usuarios` (
 -- Indices de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  ADD PRIMARY KEY (`id_permiso`),
-  ADD UNIQUE KEY `documento` (`documento`,`rol`);
+  ADD PRIMARY KEY (`id_permiso`);
 
 --
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`rol`);
+  ADD PRIMARY KEY (`id_rol`) USING BTREE;
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`documento`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id_rol` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
