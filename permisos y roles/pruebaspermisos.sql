@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-08-2023 a las 15:46:50
+-- Tiempo de generación: 28-08-2023 a las 17:50:09
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -38,7 +38,11 @@ CREATE TABLE `permisos` (
 --
 
 INSERT INTO `permisos` (`id_permiso`, `documento`, `rol`) VALUES
-(0, '1175868685693', '2');
+(2, '111', '2'),
+(3, '111', '1'),
+(4, '111', '3'),
+(5, '111', '4'),
+(6, '222', '2');
 
 -- --------------------------------------------------------
 
@@ -79,7 +83,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `documento`, `nombre`, `apellido`) VALUES
-(0, '1175868685693', 'Whosemm', 'cuvillaxtx');
+(1, '111', 'esteban', 'salcedo'),
+(2, '222', 'brayan', 'hernandez');
 
 --
 -- Índices para tablas volcadas
@@ -106,6 +111,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `permisos`
+--
+ALTER TABLE `permisos`
+  MODIFY `id_permiso` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
