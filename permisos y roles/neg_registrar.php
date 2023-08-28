@@ -1,5 +1,7 @@
 <?php
 
+session_start();//inicio las variables de sesion 
+
 class usuario
 {
     public function registrar($documento,$nombre,$apellido)
@@ -8,7 +10,7 @@ class usuario
 
 //Inicio auto-incremento por codigo
 
-        $iid="0";//la vriabl id comienza en 0
+        $iid="0";//la variable id comienza en 0
         
         $sqlid = "SELECT * FROM usuarios";//selecciona todos los usuarios 
 
@@ -50,9 +52,16 @@ class usuario
                 mysqli_query($db,"INSERT INTO permisos (id_permiso, documento, rol) VALUES ('NULL', '$documento','2')");
 
                 echo "<p> Usted ha sido registrado correctamente </p>  ";
+
+                $_SESSION["documento"] = $documento;//activo la sesion con el documento
+                header ("Location: vista_permisos.php");//mando al usuario a la vista de permisos
+
             }else 
             {
                 echo 'Usted ya ha sido registrado anteriormente';//no deja registrar si ya se ha registrado
+                
+                $_SESSION["documento"] = $documento;//activo la sesion con el documento
+                header ("Location: vista_permisos.php");//mando al usuario a la vista de permisos
             }
 
     }//fin metodo

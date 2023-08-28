@@ -9,7 +9,6 @@
 <?php
 
 echo '<h1>Formulario</h1>'; echo '<br>';
-echo "fhfhfhfg";
 echo '<form class="formulario" action="neg_registrar.php" method="post">';
 
 echo '<input placeholder="Documento" type="number" required name="documento" >'; echo '<br>';
