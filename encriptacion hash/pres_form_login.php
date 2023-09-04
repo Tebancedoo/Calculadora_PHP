@@ -2,7 +2,9 @@
 
 echo " 
 
-<form method='post' action ='neg_registar.php'>
+<h2>Login</h2>
+
+<form method='post' action ='neg_ingresar.php'>
 
 Nombre: <input type='text' name='nombre'>
 <br>
@@ -13,8 +15,6 @@ Contraseña: <input type='password' name='contrasena'>
 <input type='submit' value='Enviar'>
 
 <br><br><br>
-
-<a href='pres_form_login.php' >¿Ya tiene una cuenta?</a>
 
 </form>
 
